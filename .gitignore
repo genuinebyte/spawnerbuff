@@ -1,0 +1,11 @@
+# VSCode things
+.vscode
+.settings
+.classpath
+.project
+
+# Maven things
+target/
+
+# Genuinebyte things
+*.sh

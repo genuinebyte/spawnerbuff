@@ -1,0 +1,5 @@
+# Allow players to use detector rails to put spawners in minecarts
+allowLoadMinecart: true
+
+# Allow players to use detectors rails to extract spawners from minecarts
+allowUnloadMinecart: true

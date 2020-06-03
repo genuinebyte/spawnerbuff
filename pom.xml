@@ -1,0 +1,82 @@
+<!-- based on https://github.com/sgrayme/SpigotPlugin/blob/master/pom.xml -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>dev.genbyte.spawnerbuff</groupId>
+  <artifactId>SpawnerBuff</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0.0</version>
+
+  <name>spawnerbuff</name>
+  <description>Allow minecarts to be loaded/unloaded with spawners</description>
+  <url>https://genbyte.dev</url><!-- TODO: add URL -->
+
+  <developers>
+    <developer>
+      <name>Genuinebyte</name>
+      <url>https://genbyte.dev</url>
+    </developer>
+  </developers>
+
+  <properties>
+    <author>Genuinebyte</author>
+    <mainClass>dev.genbyte.spawnerbuff.SpawnerBuff</mainClass>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
+  <repositories>
+    <!-- Spigot Maven repository -->
+    <repository>
+      <id>spigot-repo</id>
+      <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+    </repository>
+
+    <!-- CodeMC -->
+    <repository>
+      <id>codemc-repo</id>
+      <url>https://repo.codemc.org/repository/maven-public/</url>
+      <layout>default</layout>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <!--Spigot API -->
+    <dependency>
+      <groupId>org.spigotmc</groupId>
+      <artifactId>spigot-api</artifactId>
+      <version>1.15.1-R0.1-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>de.tr7zw</groupId>
+      <artifactId>item-nbt-api-plugin</artifactId>
+      <version>2.3.1</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <defaultGoal>clean install</defaultGoal>
+
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+        <includes>
+          <include>plugin.yml</include>
+        </includes>
+      </resource>
+
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>false</filtering>
+        <excludes>
+          <exclude>plugin.yml</exclude>
+        </excludes>
+      </resource>
+    </resources>
+  </build>
+</project>
