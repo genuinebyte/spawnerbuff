@@ -18,7 +18,9 @@ import org.bukkit.event.block.BlockRedstoneEvent;
 
 import de.tr7zw.nbtapi.NBTTileEntity;
 import de.tr7zw.nbtapi.NBTCompound;
+import de.tr7zw.nbtapi.NBTCompoundList;
 import de.tr7zw.nbtapi.NBTEntity;
+import de.tr7zw.nbtapi.NBTList;
 
 public class MinecartHandler implements Listener {
 	private final SpawnerBuff sb;
@@ -115,7 +117,13 @@ public class MinecartHandler implements Listener {
 		if (spawnData == null) {
 			spawnData = compound.addCompound("SpawnData");
 		}
-
 		spawnData.setString("id", id);
+
+		NBTCompoundList spawnPotentials = compound.getCompoundList("SpawnPotentials");
+		if (spawnPotentials == null) {
+			sb.getLogger().log(Level.SEVERE, "SpawnPotentials is null D:");
+			return;
+		}
+		spawnPotentials.get(0).getCompound("Entity").setString("id", id);
 	}
 }
