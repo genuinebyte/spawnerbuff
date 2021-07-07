@@ -1,3 +1,7 @@
+# Inactive; Unmaintined
+
+This plugin is no longer maintined. It might still work for your version of the game. If you plan to use it, I recommend testing it first on an unimportant server. I don't think it'd be able to cause much damage, but it's better to be safe.
+
 # SpawnerBuff
 Depends on tr7zw's [NBT Item API](https://github.com/tr7zw/Item-NBT-API).
 
